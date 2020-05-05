@@ -97,13 +97,12 @@ class App:
 
 
 	def poolSelection(self):
-		index=0
-		r = random.random()
-		while r>0:
-			r-=self.oldBird[index].fitness
-			index+=1
-		index-=1
-		child = Bird(self.oldBird[index].brain,flag=True)
+		m = 0
+
+		for i in self.oldBird:
+			if i.fitness>m:
+				b = i
+		child = Bird(b.brain,flag=True)
 		child.mutate()
 		return child
  		

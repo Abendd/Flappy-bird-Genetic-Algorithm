@@ -25,7 +25,7 @@ class Bird:
 		self.fitness = 0 
 	def mutateFunc(self,x):
 		if np.random.random()<0.1:
-			return x + np.random.normal()*0.3
+			return x + np.random.normal()
 		else:
 			return x
 
